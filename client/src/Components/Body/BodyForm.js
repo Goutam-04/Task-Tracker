@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 
-import { useDispatch } from 'react-redux'
-import { addNewTodo } from '../../Redux/Actions'
+
 
 const BodyForm = () => {
 
     const [text,setText]=useState("")
 
-    const dispatch=useDispatch();
+
 
     const onInputChange= (e)=>{
         // console.log(e.target.value)
@@ -15,11 +14,7 @@ const BodyForm = () => {
         console.log(text)
     }
 const onFormSubmit=(e)=>{
-    e.preventDefault();
-
-    dispatch(addNewTodo(text));
-
-    setText("");
+  
 }
 
 
