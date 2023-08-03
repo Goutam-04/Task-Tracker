@@ -1,0 +1,82 @@
+in exporting function from different files in server   you have add the file extesion like db.js
+
+imp
+how to connect to database
+create an anoter user in the cluser and give him the read and write access 
+then create a collection named something 
+then at the end of the string of the connection string add "/{collection_name}"
+
+
+Redux=>
+
+what is redux?
+redux is the database of frontend . it stores the state and fetch to another page . it is helpful in very complex application.
+
+to create redux folder , create a redux folder insider src of frontend, then inside redux folder make actions and reducers folder.
+actions forder is to call all apis. and reducers creates the actions or what to do with the data 
+
+Download redux dev tool extension and npm i redux-devtool-extension
+
+then we have to connect redux to the application,
+to connect that we have to  create file called state.js inside the redux folder 
+the import 
+
+
+we need a middleware 
+for that npm i thunk
+
+
+all steps
+npm i redux react-redux redux-devtools-extension redux-thunk
+
+
+make changess in store.js
+
+import {createStore,combineReducers, applyMiddleware} from 'redux';
+
+import thunk from 'redux-thunk'
+
+import {composeWithDevTools} from 'redux-devtools-extension'
+
+
+const reducer = combineReducers({
+    todo:todoReducers
+})
+
+const middleware = [thunk];
+
+const store = createStore(
+    reducer,
+    composeWithDevTools(applyMiddleware(...middleware))
+
+)
+
+export default store;
+
+make changes in index.js of main app
+
+import store from './Redux/store';
+import { Provider } from 'react-redux';
+
+root.render(
+  <Provider store={store}>
+
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+  </Provider>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  to connect backend to frontend we use cors 
+  npm install cors
