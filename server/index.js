@@ -6,7 +6,7 @@ import router from "./routes/ToDoRoute.js";
 import Connection from "./database/db.js";
 
 
-const PORT= process.env.port ||8000;
+const PORT= process.env.port || 8000;
 
 const app=express();
 
