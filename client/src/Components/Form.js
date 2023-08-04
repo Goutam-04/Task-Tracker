@@ -25,12 +25,12 @@ const Form = () => {
 
     <div className="container">
 
-      <h1>ToDo App</h1>
+      <h1 >Stay On Track: Plan & Achieve</h1>
 
       <div className="top">
         <input
           type="text"
-          placeholder="Add ToDos..."
+          placeholder="Add a new Task..."
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
