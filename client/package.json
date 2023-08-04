@@ -23,7 +23,7 @@
   "homepage": "https://Goutam-04.github.io/Task-Tracker",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build" ,
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
