@@ -1,25 +1,21 @@
 import  express  from "express";
 import cors from 'cors';
-import bodyParser from "body-parser";
+
+import router from "./routes/ToDoRoute.js";
 
 import Connection from "./database/db.js";
-import Routes from './routes/route.js'
+
+
+const PORT= process.env.port ||8000;
 
 const app=express();
 
+app.use(express.json())
+app.use(cors())
+Connection()
+app.use(router )
 
-app.use(cors());
-
-// app.use(bodyParser.json({extended:true}));
-app.use(express.json({extended:true}));
-app.use(express.urlencoded({extended:true}));
-// after pargeing use routing path
-app.use('/',Routes);
-
-const port= 8000;
-
-app.listen(port,()=>{
-    console.log(`your server is running on port number ${port}`)
+app.listen(PORT,()=>{
+    console.log(`your server is running on port number ${PORT}`)
 })
 
-Connection()
