@@ -10,6 +10,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: #088395;
+    font-size: 600;
   }
   
   .container{
@@ -37,11 +38,21 @@
     outline: none;
     width: 400px;
     padding: 0.5rem;
+    background: transparent;
     border-bottom: 1px solid #000;
+ 
+  }
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(255, 255, 255);
+    opacity: 1; /* Firefox */
+  }
+  
+  ::-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
   }
   
   .add{
-    background-color: #000;
+    background-color: #12a0b6;
     color: #fff;
     padding: 0.5rem 1.5rem;
     cursor: pointer;
@@ -50,7 +61,7 @@
   .todo{
     position: relative;
     margin-top: 1rem;
-    background-color: #000;
+    background-color: #12a0b6;
     color: #fff;
     padding: 1.5rem 3rem;
     border-radius: 5px;
