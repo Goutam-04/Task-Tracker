@@ -1,54 +1,115 @@
-import axios from 'axios'
+import axios from 'axios';
 
-const baseUrl = "https://goutam-04.github.io/Task-Tracker/api/"
-// const baseUrl ="http://localhost:8000"
+const baseUrl = "";
 
 const getAllToDo = (setToDo) => {
     axios
-        .get(baseUrl)
+        .get(`${baseUrl}/api`)
         .then(({ data }) => {
             console.log('data ---> ', data);
-            setToDo(data)
+            setToDo(data);
         })
-}
+        .catch((err) => console.log(err));
+};
 
 const addToDo = (text, setText, setToDo) => {
-
     axios
-        .post(`${baseUrl}/save`, { text })
+        .post(`${baseUrl}/api/save`, { text })
         .then((data) => {
             console.log(data);
-            setText("")
-            getAllToDo(setToDo)
+            setText("");
+            getAllToDo(setToDo);
         })
-        .catch((err) => console.log(err))
-
-}
+        .catch((err) => console.log(err));
+};
 
 const updateToDo = (toDoId, text, setToDo, setText, setIsUpdating) => {
-
     axios
-        .post(`${baseUrl}/update`, { _id: toDoId, text })
+        .post(`${baseUrl}/api/update`, { _id: toDoId, text })
         .then((data) => {
-            setText("")
-            setIsUpdating(false)
-            getAllToDo(setToDo)
+            setText("");
+            setIsUpdating(false);
+            getAllToDo(setToDo);
         })
-        .catch((err) => console.log(err))
-
-}
+        .catch((err) => console.log(err));
+};
 
 const deleteToDo = (_id, setToDo) => {
-
     axios
-        .post(`${baseUrl}/delete`, { _id })
+        .post(`${baseUrl}/api/delete`, { _id })
         .then((data) => {
-            console.log(data)
-            getAllToDo(setToDo)
+            console.log(data);
+            getAllToDo(setToDo);
         })
-        .catch((err) => console.log(err))
+        .catch((err) => console.log(err));
+};
 
-}
+export { getAllToDo, addToDo, updateToDo, deleteToDo };
 
 
-export { getAllToDo, addToDo, updateToDo, deleteToDo }
+
+
+
+
+
+
+
+
+
+
+
+
+// import axios from 'axios'
+
+// const baseUrl = "https://goutam-04.github.io/Task-Tracker/"
+// // const baseUrl ="http://localhost:8000"
+
+// const getAllToDo = (setToDo) => {
+//     axios
+//         .get(baseUrl)
+//         .then(({ data }) => {
+//             console.log('data ---> ', data);
+//             setToDo(data)
+//         })
+// }
+
+// const addToDo = (text, setText, setToDo) => {
+
+//     axios
+//         .post(`${baseUrl}/save`, { text })
+//         .then((data) => {
+//             console.log(data);
+//             setText("")
+//             getAllToDo(setToDo)
+//         })
+//         .catch((err) => console.log(err))
+
+// }
+
+// const updateToDo = (toDoId, text, setToDo, setText, setIsUpdating) => {
+
+//     axios
+//         .post(`${baseUrl}/update`, { _id: toDoId, text })
+//         .then((data) => {
+//             setText("")
+//             setIsUpdating(false)
+//             getAllToDo(setToDo)
+//         })
+//         .catch((err) => console.log(err))
+
+// }
+
+// const deleteToDo = (_id, setToDo) => {
+
+//     axios
+//         .post(`${baseUrl}/delete`, { _id })
+//         .then((data) => {
+//             console.log(data)
+//             getAllToDo(setToDo)
+//         })
+//         .catch((err) => console.log(err))
+
+// }
+
+
+// export { getAllToDo, addToDo, updateToDo, deleteToDo }
