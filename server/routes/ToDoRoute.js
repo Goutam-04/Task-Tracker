@@ -3,9 +3,9 @@ import  {getToDo, saveToDo,updateToDo,deleteToDo } from "../controllers/ToDoCont
 
 const router = Router();
 
-router.get('/',getToDo)
-router.post('/save',saveToDo)
-router.post('/update',updateToDo)
-router.post('/delete',deleteToDo)
+router.get('/api',getToDo)
+router.post('/api/save',saveToDo)
+router.post('/api/update',updateToDo)
+router.post('/api/delete',deleteToDo)
 
 export default router;
