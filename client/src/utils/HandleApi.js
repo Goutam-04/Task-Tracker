@@ -61,8 +61,8 @@
 
 import axios from 'axios'
 
-// const baseUrl = "https://goutam-04.github.io/Task-Tracker/"
-const baseUrl ="http://localhost:8000"
+const baseUrl = "https://taski-qr2o.onrender.com/"
+// const baseUrl ="http://localhost:8000"
 
 const getAllToDo = (setToDo) => {
     axios

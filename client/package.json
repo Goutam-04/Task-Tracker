@@ -1,15 +1,34 @@
 {
   "name": "client",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "author": "Goutam",
+  "license": "ISC",
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.14.1",
-    "@mui/material": "^5.14.2",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongodb": "^5.7.0",
+    "mongoose": "^7.4.1",
+    "nodemon": "^3.0.1",
+    "@emotion\/react": "^11.11.1",
+    "@emotion\/styled": "^11.11.0",
+    "@mui\/icons-material": "^5.14.1",
+    "@mui\/material": "^5.14.2",
+    "@testing-library\/jest-dom": "^5.17.0",
+    "@testing-library\/react": "^13.4.0",
+    "@testing-library\/user-event": "^13.5.0",
     "axios": "^1.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -20,19 +39,12 @@
     "redux-thunk": "^2.4.2",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://Goutam-04.github.io/Task-Tracker",
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
+  "private": true,
+  "homepage": "https:\/\/Goutam-04.github.io\/Task-Tracker",
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app\/jest"
     ]
   },
   "browserslist": {
