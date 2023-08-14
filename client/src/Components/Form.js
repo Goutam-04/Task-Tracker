@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import ToDo from './ToDo';
+import ToDo from './ToDo.js';
 
-import { addToDo, getAllToDo, updateToDo, deleteToDo } from "../utils/HandleApi";
+import { addToDo, getAllToDo, updateToDo, deleteToDo } from "../utils/HandleApi.js";
 import '../App.css';
 
 const Form = () => {
